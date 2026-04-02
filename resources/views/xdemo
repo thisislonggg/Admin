@@ -1,0 +1,20 @@
+@extends('layouts.master')
+@section('title')Metrica @endsection
+@section('css')
+<link href="{{URL::asset('assets/plugins/fullcalendar/main.css')}}" rel="stylesheet" type="text/css" />
+@endsection
+@section('content')
+<!-- this is breadcrumbs -->
+@component('components.breadcrumb')
+@slot('li_1') Metrica @endslot
+@slot('li_2') UI Kit @endslot
+@slot('title') Calendar @endslot
+@endcomponent
+
+
+
+@endsection
+@section('script')
+<script src="{{URL::asset('assets/plugins/fullcalendar/main.min.js')}}"></script>
+<script src="{{URL::asset('assets/pages/calendar.init.js')}}"></script>
+@endsection

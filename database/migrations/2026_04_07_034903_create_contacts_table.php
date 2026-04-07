@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-public function up()
+    public function up()
 {
     Schema::create('contacts', function (Blueprint $table) {
         $table->id();
@@ -19,7 +19,7 @@ public function up()
         $table->string('company')->nullable();
         $table->string('status')->nullable();
         $table->string('keterangan')->nullable();
-        $table->string('avatar')->nullable(); // Untuk menyimpan nama file foto
+        $table->string('avatar')->nullable(); 
         $table->timestamps();
     });
 }

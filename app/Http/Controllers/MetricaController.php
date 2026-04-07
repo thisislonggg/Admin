@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lead;
 
 class MetricaController extends Controller
 {
@@ -12,4 +13,9 @@ class MetricaController extends Controller
         }
         return view('errors.404');
     }
+    public function showLeads()
+{
+    $leads = Lead::orderBy('created_at', 'desc')->get();
+    return view('crm-leads', compact('leads'));
+}
 }

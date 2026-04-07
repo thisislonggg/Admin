@@ -27,25 +27,10 @@
                         <div class="collapse " id="sidebarDashboards">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index">Analytics</a>
-                                </li><!--end nav-item-->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="crypto-index">Crypto</a>
-                                </li><!--end nav-item-->
-                                <li class="nav-item">
                                     <a class="nav-link" href="crm-index">CRM</a>
                                 </li><!--end nav-item-->
                                 <li class="nav-item">
                                     <a class="nav-link" href="projects-index">Project</a>
-                                </li><!--end nav-item-->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="ecommerce-index">Ecommerce</a>
-                                </li><!--end nav-item-->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="helpdesk-index">Helpdesk</a>
-                                </li><!--end nav-item-->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="hospital-index">Hospital</a>
                                 </li><!--end nav-item-->
                             </ul><!--end nav-->
                         </div><!--end sidebarDashboards-->

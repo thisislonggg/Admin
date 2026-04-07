@@ -56,19 +56,15 @@
                             <label class="form-label" for="status">Status</label>
                             <select class="form-select" id="status" name="status">
                                 <option value="">Pilih Status...</option>
-                                <option value="VIP" {{ old('status', $contact->status) == 'VIP' ? 'selected' : '' }}>VIP</option>
-                                <option value="Reguler" {{ old('status', $contact->status) == 'Reguler' ? 'selected' : '' }}>Reguler</option>
-                                <option value="Lead" {{ old('status', $contact->status) == 'Lead' ? 'selected' : '' }}>Lead</option>
+                                <option value="Proses Meeting" {{ old('status', $contact->status) == 'Proses Meeting' ? 'selected' : '' }}>Proses Meeting</option>
+                                <option value="Kirim Penawaran" {{ old('status', $contact->status) == 'Kirim Penawaran' ? 'selected' : '' }}>Kirim Penawaran</option>
+                                <option value="Deal" {{ old('status', $contact->status) == 'Deal' ? 'selected' : '' }}>Deal</option>
+                                <option value="Batal" {{ old('status', $contact->status) == 'Batal' ? 'selected' : '' }}>Batal</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="status">Keterangan</label>
-                            <select class="form-select" id="status" name="status">
-                                <option value="">Pilih Keterangan...</option>
-                                <option value="1" {{ old('status', $contact->status) == '1' ? 'selected' : '' }}>1</option>
-                                <option value="2" {{ old('status', $contact->status) == '2' ? 'selected' : '' }}>2</option>
-                                <option value="3" {{ old('status', $contact->status) == '3' ? 'selected' : '' }}>3</option>
-                            </select>
+                            <label class="form-label" for="keterangan">Keterangan</label>
+                            <input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ old('keterangan', $contact->keterangan) }}" placeholder="Keterangan">
                         </div>
                     </div>
 

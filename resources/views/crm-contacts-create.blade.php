@@ -50,18 +50,18 @@
                             <input type="text" class="form-control" id="company" name="company" value="{{ old('company') }}" placeholder="Nama Perusahaan">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="status">Status / Tag</label>
+                            <label class="form-label" for="status">Status</label>
                             <select class="form-select" id="status" name="status">
                                 <option value="">Pilih Status...</option>
-                                <option value="Proses Meeting" {{ old('status', $contact->status) == 'Proses Meeting' ? 'selected' : '' }}>VIP</option>
-                                <option value="Kirim Penawaran" {{ old('status', $contact->status) == 'Kirim Penawaran' ? 'selected' : '' }}>Reguler</option>
-                                <option value="Deal" {{ old('status', $contact->status) == 'Deal' ? 'selected' : '' }}>Lead</option>
-                                <option value="Batal" {{ old('status', $contact->status) == 'Batal' ? 'selected' : '' }}>Lead</option>
+                                <option value="VIP" {{ old('status') == 'Proses Meeting' ? 'selected' : '' }}>Proses Meeting</option>
+                                <option value="Reguler" {{ old('status') == 'Kirim Penawaran' ? 'selected' : '' }}>Kirim Penawaran</option>
+                                <option value="Lead" {{ old('status') == 'Deal' ? 'selected' : '' }}>Deal</option>
+                                <option value="Lead" {{ old('status') == 'Batal' ? 'selected' : '' }}>Batal</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="keterangan">Keterangan</label>
-                            <input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ old('keterngan') }}" placeholder="Keterangan">
+                            <input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ old('keterangan') }}" placeholder="Keterangan">
                         </div>
                     </div>
 

@@ -59,7 +59,9 @@
                                 </td>
                                 <td>{{ $contact->email }}</td>
                                 <td>{{ $contact->phone }}</td>
-                                <td>{{ $contact->company ?? '-' }}</td>
+                                <td style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="{{ $contact->company }}">
+                                    {{ $contact->company ?? '-' }}
+                                </td>                               
                                 <td>
                                     @if($contact->status)
                                         <span class="badge bg-soft-primary">{{ $contact->status }}</span>
@@ -69,7 +71,7 @@
                                 </td>
                                 <td>{{ $contact->keterangan }}</td>
 
-<td class="text-end">
+<td class="text-end text-nowrap">
     @php
         // 1. Bersihkan karakter selain angka (hapus spasi, strip, tanda +)
         $waNumber = preg_replace('/[^0-9]/', '', $contact->phone);

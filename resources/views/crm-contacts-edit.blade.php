@@ -49,16 +49,25 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="company">Info / Perusahaan</label>
+                            <label class="form-label" for="company">Perusahaan</label>
                             <input type="text" class="form-control" id="company" name="company" value="{{ old('company', $contact->company) }}">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="status">Status / Tag</label>
+                            <label class="form-label" for="status">Status</label>
                             <select class="form-select" id="status" name="status">
                                 <option value="">Pilih Status...</option>
                                 <option value="VIP" {{ old('status', $contact->status) == 'VIP' ? 'selected' : '' }}>VIP</option>
                                 <option value="Reguler" {{ old('status', $contact->status) == 'Reguler' ? 'selected' : '' }}>Reguler</option>
                                 <option value="Lead" {{ old('status', $contact->status) == 'Lead' ? 'selected' : '' }}>Lead</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="status">Keterangan</label>
+                            <select class="form-select" id="status" name="status">
+                                <option value="">Pilih Keterangan...</option>
+                                <option value="1" {{ old('status', $contact->status) == '1' ? 'selected' : '' }}>1</option>
+                                <option value="2" {{ old('status', $contact->status) == '2' ? 'selected' : '' }}>2</option>
+                                <option value="3" {{ old('status', $contact->status) == '3' ? 'selected' : '' }}>3</option>
                             </select>
                         </div>
                     </div>
@@ -77,10 +86,10 @@
                         <small class="text-muted">Biarkan kosong jika tidak ingin mengubah foto. Maks 2MB.</small>
                     </div>
 
-                    <div class="d-flex justify-content-between">
-                        <a href="{{ route('contacts.index') }}" class="btn btn-outline-danger">Batal</a>
-                        <button type="submit" class="btn btn-primary">Update Kontak</button>
-                    </div>
+<div class="d-flex justify-content-end gap-2">
+    <a href="{{ route('contacts.index') }}" class="btn btn-outline-danger">Batal</a>
+    <button type="submit" class="btn btn-primary">Update Kontak</button>
+</div>
                 </form>
             </div>
         </div>

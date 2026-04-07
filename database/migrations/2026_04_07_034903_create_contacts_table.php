@@ -18,6 +18,7 @@ public function up()
         $table->string('phone');
         $table->string('company')->nullable();
         $table->string('status')->nullable();
+        $table->string('keterangan')->nullable();
         $table->string('avatar')->nullable(); // Untuk menyimpan nama file foto
         $table->timestamps();
     });

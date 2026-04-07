@@ -5,7 +5,7 @@
 @component('components.breadcrumb')
     @slot('li_1') Metrica @endslot
     @slot('li_2') CRM @endslot
-    @slot('title') Contacts @endslot
+    @slot('title') Contact Form @endslot
 @endcomponent
 @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -37,8 +37,9 @@
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>Nomor WA</th>
-                                <th>Info / Perusahaan</th>
+                                <th>Perusahaan</th>
                                 <th>Status</th>
+                                <th>Keterangan</th>
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
@@ -54,9 +55,7 @@
                                     @endif
                                     
                                     {{ $contact->name }}
-                                    
-                                    @if($contact->created_at >= now()->subDay())
-                                    @endif
+                            
                                 </td>
                                 <td>{{ $contact->email }}</td>
                                 <td>{{ $contact->phone }}</td>
@@ -68,15 +67,30 @@
                                         -
                                     @endif
                                 </td>
+                                <td>{{ $contact->keterangan }}</td>
+
 <td class="text-end">
-    <a href="{{ route('contacts.edit', $contact->id) ?? '#' }}" class="me-2">
-        <i class="las la-pen text-secondary font-16"></i>
+    @php
+        // 1. Bersihkan karakter selain angka (hapus spasi, strip, tanda +)
+        $waNumber = preg_replace('/[^0-9]/', '', $contact->phone);
+        // 2. Jika nomor dimulai dengan angka '0', ganti dengan '62'
+        if (str_starts_with($waNumber, '0')) {
+            $waNumber = '62' . substr($waNumber, 1);
+        }
+    @endphp
+    
+    <a href="https://wa.me/{{ $waNumber }}" target="_blank" class="me-2" title="Chat WhatsApp">
+        <i class="lab la-whatsapp text-success font-18 align-middle"></i>
+    </a>
+
+    <a href="{{ route('contacts.edit', $contact->id) ?? '#' }}" class="me-2" title="Edit Kontak">
+        <i class="las la-pen text-secondary font-16 align-middle"></i>
     </a>
     
     <form action="{{ route('contacts.destroy', $contact->id) ?? '#' }}" method="POST" class="d-inline-block m-0 p-0" onsubmit="return confirm('Apakah kamu yakin ingin menghapus kontak ini?');">
         @csrf
         @method('DELETE')
-        <button type="submit" class="bg-transparent border-0 p-0 m-0 align-top" style="outline: none;">
+        <button type="submit" class="bg-transparent border-0 p-0 m-0 align-middle" style="outline: none;" title="Hapus Kontak">
             <i class="las la-trash-alt text-secondary font-16"></i>
         </button>
     </form>

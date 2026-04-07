@@ -58,6 +58,15 @@
                                 <option value="Lead" {{ old('status') == 'Lead' ? 'selected' : '' }}>Lead</option>
                             </select>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="keterangan">Keterangan</label>
+                            <select class="form-select" id="keterangan" name="keterangan">
+                                <option value="">Pilih Keterangan...</option>
+                                <option value="VIP" {{ old('keterangan') == 'VIP' ? 'selected' : '' }}>VIP</option>
+                                <option value="Reguler" {{ old('keterangan') == 'Reguler' ? 'selected' : '' }}>Reguler</option>
+                                <option value="Lead" {{ old('keterangan') == 'Lead' ? 'selected' : '' }}>Lead</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="mb-4">
@@ -66,9 +75,9 @@
                         <small class="text-muted">Format yang diizinkan: JPG, PNG, JPEG. Maksimal 2MB.</small>
                     </div>
 
-                    <div class="d-flex justify-content-between">
-                        <a href="{{ route('contacts.index') }}" class="btn btn-outline-danger">Batal</a>
-                        <button type="submit" class="btn btn-primary">Simpan Kontak</button>
-                    </div>
+<div class="d-flex justify-content-end gap-2">
+    <a href="{{ route('contacts.index') }}" class="btn btn-outline-danger">Batal</a>
+    <button type="submit" class="btn btn-primary">Simpan Kontak</button>
+</div>
                 </form>
             </div></div></div></div>@endsection

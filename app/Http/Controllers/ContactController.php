@@ -26,6 +26,7 @@ class ContactController extends Controller
             'phone' => 'required|string|max:20',
             'company' => 'nullable|string|max:255',
             'status' => 'nullable|string|max:50',
+            'keterangan' => 'nullable|string|max:50',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // Validasi file gambar
         ]);
 
